@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Madu Delisha</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#fff8ee;
+      color:#333;
+      overflow-x:hidden;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    /* HEADER */
+
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      padding:18px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(255,248,238,0.95);
+      backdrop-filter:blur(10px);
+      z-index:1000;
+      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:#8b5a2b;
+    }
+
+    nav{
+      display:flex;
+      gap:25px;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:#5c4033;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#d4a017;
+    }
+
+    section{
+      padding:100px 8%;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:50px;
+      flex-wrap:wrap;
+
+      background:
+      linear-gradient(rgba(255,248,238,0.75), rgba(255,248,238,0.82)),
+      url('maduaja.jpg') center/cover no-repeat;
+    }
+
+    .hero-text{
+      flex:1;
+      min-width:300px;
+    }
+
+    .hero-text h1{
+      font-size:60px;
+      line-height:1.2;
+      color:#5c3b1e;
+      margin-bottom:20px;
+    }
+
+    .hero-text p{
+      font-size:18px;
+      color:#6b5b4d;
+      line-height:1.9;
+      margin-bottom:30px;
+      max-width:600px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 30px;
+      border-radius:50px;
+      text-decoration:none;
+      background:linear-gradient(135deg,#f4b400,#c98a00);
+      color:white;
+      font-weight:500;
+      transition:0.3s;
+      box-shadow:0 8px 25px rgba(201,138,0,0.3);
+    }
+
+    .btn:hover{
+      transform:translateY(-5px);
+      box-shadow:0 10px 25px rgba(201,138,0,0.35);
+    }
+
+    .hero-image img{
+      width:400px;
+      border-radius:30px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.15);
+    }
+
+    /* TITLE */
+
+    .title{
+      text-align:center;
+      font-size:40px;
+      color:#8b5a2b;
+      margin-bottom:20px;
+    }
+
+    .subtitle{
+      text-align:center;
+      color:#7a6857;
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+    }
+
+    /* ABOUT */
+
+    .about-box{
+      margin-top:50px;
+      background:#fff3df;
+      padding:40px;
+      border-radius:30px;
+      border:1px solid #f0d6a6;
+      box-shadow:0 10px 30px rgba(0,0,0,0.05);
+      text-align:center;
+      line-height:1.9;
+      color:#5f4b3c;
+    }
+
+    /* PRODUCTS */
+
+    .products{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+      margin-top:50px;
+    }
+
+    .product-card{
+      background:#fffaf2;
+      border-radius:25px;
+      overflow:hidden;
+      border:1px solid #f1dfbf;
+      box-shadow:0 10px 25px rgba(0,0,0,0.06);
+      transition:0.4s;
+    }
+
+    .product-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .product-card img{
+      width:100%;
+      height:260px;
+      object-fit:cover;
+    }
+
+    .product-content{
+      padding:25px;
+      text-align:center;
+    }
+
+    .product-content h3{
+      color:#8b5a2b;
+      margin-bottom:10px;
+    }
+
+    .product-content p{
+      color:#6e5c4d;
+      line-height:1.7;
+    }
+
+    /* ADVANTAGES */
+
+    .advantages{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+      margin-top:50px;
+    }
+
+    .adv-box{
+      background:#fff3df;
+      padding:35px;
+      border-radius:25px;
+      border:1px solid #f0d6a6;
+      text-align:center;
+      box-shadow:0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .adv-box h3{
+      margin:15px 0;
+      color:#8b5a2b;
+    }
+
+    .icon{
+      font-size:45px;
+    }
+
+    /* TESTIMONIAL */
+
+    .testimonials{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+      margin-top:50px;
+    }
+
+    .testimonial{
+      background:#fffaf2;
+      padding:30px;
+      border-radius:25px;
+      border:1px solid #f1dfbf;
+      box-shadow:0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .testimonial p{
+      color:#5f4b3c;
+      line-height:1.8;
+    }
+
+    .testimonial h4{
+      margin-top:15px;
+      color:#8b5a2b;
+    }
+
+    /* CONTACT */
+
+    .contact-box{
+      max-width:700px;
+      margin:50px auto 0;
+      background:#fffaf2;
+      padding:50px;
+      border-radius:30px;
+      border:1px solid #f1dfbf;
+      text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .contact-box p{
+      margin:15px 0;
+      color:#5f4b3c;
+      font-size:17px;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#6e3d00;
+      color:white;
+      text-align:center;
+      padding:25px;
+      margin-top:80px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      header{
+        padding:15px 6%;
+      }
+
+      nav{
+        display:none;
+      }
+
+      .hero{
+        text-align:center;
+        padding-top:140px;
+      }
+
+      .hero-text h1{
+        font-size:42px;
+      }
+
+      .hero-image img{
+        width:280px;
+      }
+
+      .title{
+        font-size:32px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="logo">🍯 Madu Delisha</div>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#products">Produk</a>
+      <a href="#advantages">Keunggulan</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-text">
+
+      <h1>
+        Madu Asli <br>
+        Dari Alam Nusantara
+      </h1>
+
+      <p>
+        Menyediakan madu murni berkualitas tinggi langsung dari peternak terpercaya.
+        Sehat, alami, dan kaya manfaat untuk keluarga Anda.
+      </p>
+
+      <a href="#products" class="btn">
+        Lihat Produk
+      </a>
+
+    </div>
+
+    <div class="hero-image">
+      <img src="varianmadu.jpeg" alt="Madu Hutan">
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <h2 class="title">Tentang Kami</h2>
+
+    <p class="subtitle">
+      Toko online madu terpercaya dengan kualitas premium dan harga terbaik.
+    </p>
+
+    <div class="about-box">
+
+      <p>
+        Madu Delisha hadir untuk menyediakan madu asli pilihan dari berbagai daerah di Indonesia.
+        Kami bekerja sama langsung dengan peternak lokal untuk memastikan kualitas,
+        kemurnian, dan manfaat madu tetap terjaga.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- PRODUCTS -->
+
+  <section id="products">
+
+    <h2 class="title">Produk Kami</h2>
+
+    <p class="subtitle">
+      Pilihan madu alami dengan kualitas terbaik.
+    </p>
+
+    <div class="products">
+
+      <div class="product-card">
+
+        <img src="./maduhutan.jpeg" alt="Madu Hutan">
+
+        <div class="product-content">
+          <h3>Madu Hutan</h3>
+
+          <p>
+            Madu alami dari hutan liar dengan rasa khas dan kaya manfaat.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="product-card">
+
+        <img src="./kemasanmadu.jpeg" alt="Madu Premium">
+
+        <div class="product-content">
+          <h3>Madu Premium</h3>
+
+          <p>
+            Madu premium dengan kandungan antioksidan tinggi.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="product-card">
+
+        <img src="./varianmadu.jpeg" alt="Madu Akasia">
+
+        <div class="product-content">
+          <h3>Madu Akasia</h3>
+
+          <p>
+            Perpaduan madu dan herbal alami untuk menjaga kesehatan tubuh.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ADVANTAGES -->
+
+  <section id="advantages">
+
+    <h2 class="title">Kenapa Memilih Kami?</h2>
+
+    <div class="advantages">
+
+      <div class="adv-box">
+        <div class="icon">🐝</div>
+        <h3>100% Alami</h3>
+        <p>Madu tanpa campuran dan tanpa bahan pengawet.</p>
+      </div>
+
+      <div class="adv-box">
+        <div class="icon">🚚</div>
+        <h3>Pengiriman Cepat</h3>
+        <p>Pengiriman ke seluruh Indonesia dengan aman.</p>
+      </div>
+
+      <div class="adv-box">
+        <div class="icon">⭐</div>
+        <h3>Kualitas Premium</h3>
+        <p>Dipilih langsung dari peternak madu terpercaya.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TESTIMONI -->
+
+  <section>
+
+    <h2 class="title">Testimoni Customer</h2>
+
+    <div class="testimonials">
+
+      <div class="testimonial">
+        <p>
+          "Madunya asli banget dan rasanya enak. Packing juga aman."
+        </p>
+        <h4>- Rina</h4>
+      </div>
+
+      <div class="testimonial">
+        <p>
+          "Sudah langganan beberapa bulan, kualitas selalu bagus."
+        </p>
+        <h4>- Endah</h4>
+      </div>
+
+      <div class="testimonial">
+        <p>
+          "Pelayanan cepat dan ramah. Recommended!"
+        </p>
+        <h4>- Reta</h4>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <h2 class="title">Hubungi Kami</h2>
+
+    <div class="contact-box">
+
+      <p>📞 WhatsApp : 088211851789</p>
+      <p>📷 Instagram : @zeuws.store</p>
+      <p>📍 Bogor, Indonesia</p>
+
+      <br>
+
+      <a
+        href="https://wa.me/6288211851789"
+        class="btn"
+        target="_blank"
+      >
+        Pesan Sekarang
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Madu Delisha • Healthy Natural Honey 🍯
+  </footer>
+
+</body>
+</html>
